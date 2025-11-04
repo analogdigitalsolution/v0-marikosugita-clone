@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-feature-settings: "pnum" on, "lnum" on;
+  overflow: hidden;
+  overscroll-behavior: none; /* Prevent bounce effect on mobile */
+  touch-action: pan-y; /* Improve touch handling */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Smooth transitions */
+.transition-transform {
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Fix for iOS momentum scrolling issues */
+@supports (-webkit-touch-callout: none) {
+  body {
+    /* iOS-specific fix */
+    height: -webkit-fill-available;
+  }
+}
+
+/* Ensure sections take full height on mobile */
+@media (max-height: 600px) {
+  section {
+    min-height: 100vh;
+    height: auto !important;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
