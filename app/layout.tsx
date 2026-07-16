@@ -6,11 +6,10 @@ import { ThemeProvider } from "@/components/theme-provider"
 
 const inter = Inter({ subsets: ["latin"] })
 
-// Update the metadata to reflect Paritosh Goel's information
 export const metadata: Metadata = {
   title: "Paritosh Goel",
-  description: "Urbanist, Strategist, Architect & Entrepreneur",
-    generator: 'v0.app'
+  description: "Urbanist, Public Policy Professional, Architect & Entrepreneur",
+  generator: "v0.app",
 }
 
 export default function RootLayout({
