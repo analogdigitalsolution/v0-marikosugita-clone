@@ -65,6 +65,11 @@ html {
     width: min(21rem, 84vw);
     height: min(21rem, 84vw);
   }
+
+  .biography-copy {
+    line-height: 1.54;
+    word-spacing: -0.01em;
+  }
 }
 
 /* Biography: keep all profile copy together while preserving the quiet editorial rhythm. */
@@ -84,10 +89,17 @@ html {
 
 .biography-copy {
   line-height: 1.5;
+  text-align: justify;
+  text-align-last: left;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  overflow-wrap: break-word;
+  word-spacing: 0.015em;
 }
 
 .biography-copy p {
   margin-bottom: clamp(1rem, 1.8vh, 1.35rem);
+  text-wrap: pretty;
 }
 
 .biography-copy p:last-child {
@@ -116,7 +128,8 @@ html {
   }
 
   .biography-copy {
-    line-height: 1.44;
+    line-height: 1.48;
+    word-spacing: 0;
   }
 
   .biography-copy p {
