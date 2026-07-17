@@ -94,6 +94,21 @@ html {
   margin-bottom: 0;
 }
 
+.biography-link {
+  color: inherit;
+  text-decoration-line: underline;
+  text-decoration-color: rgba(75, 85, 99, 0.35);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  transition: color 180ms ease, text-decoration-color 180ms ease;
+}
+
+.biography-link:hover,
+.biography-link:focus-visible {
+  color: rgb(31 41 55);
+  text-decoration-color: rgba(31, 41, 55, 0.8);
+}
+
 @media (max-height: 760px) {
   .biography-section {
     padding-block: 0.75rem;

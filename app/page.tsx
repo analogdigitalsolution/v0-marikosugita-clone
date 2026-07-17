@@ -174,16 +174,22 @@ export default function Home() {
             <div className="biography-copy text-[15px] sm:text-[15.5px] md:text-base font-light text-gray-700">
               <p>
                 Paritosh Goel is an architect, urban planner, entrepreneur, and public policy professional working at
-                the intersection of cities, governance, innovation, and sustainable development. He founded Urbandose
+                the intersection of cities, governance, innovation, and sustainable development. He founded{" "}
+                <a className="biography-link" href="https://urbandose.in" target="_blank" rel="noreferrer">
+                  Urbandose
+                </a>{" "}
                 to empower emerging ideas, initiatives, and communities through ecosystem building, entrepreneurship,
                 technology, innovation, venture capital, and urban transformation.
               </p>
               <p>
-                Alongside Urbandose, Paritosh works with NITI Aayog, the apex public policy think tank of the
-                Government of India, where he contributes strategy, technical, and research inputs to national and
-                state long-term visioning and multi-sectoral development roadmaps for Viksit Bharat 2047. His work
-                focuses on strategic planning, urban transformation, state visioning, institutional capacity building,
-                and governance reforms.
+                Alongside Urbandose, Paritosh works with{" "}
+                <a className="biography-link" href="https://niti.gov.in" target="_blank" rel="noreferrer">
+                  NITI Aayog
+                </a>
+                , the apex public policy think tank of the Government of India, where he contributes strategy,
+                technical, and research inputs to national and state long-term visioning and multi-sectoral development
+                roadmaps for Viksit Bharat 2047. His work focuses on strategic planning, urban transformation, state
+                visioning, institutional capacity building, and governance reforms.
               </p>
               <p>
                 Over the years, he has worked across urban development, smart cities, and innovation ecosystems. He has
@@ -197,8 +203,34 @@ export default function Home() {
               </p>
               <p>
                 His research and creative practice explore the relationship between urbanism, culture, and society,
-                including international workshops and residencies such as Urban Ephemera, Taipei Ephemera, and
-                Asterisk in Residence Kyoto.
+                including international workshops and residencies such as{" "}
+                <a
+                  className="biography-link"
+                  href="https://wuf.unhabitat.org/event/wuf12/urban-ephemera"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Urban Ephemera
+                </a>
+                ,{" "}
+                <a
+                  className="biography-link"
+                  href="https://www.travelingcircusofurbanism.com/taipei/taipeiephemera/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Taipei Ephemera
+                </a>
+                , and{" "}
+                <a
+                  className="biography-link"
+                  href="https://asterisk-kyoto.info/244244a9faec8063873af6f699abd8e3"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Asterisk in Residence Kyoto
+                </a>
+                .
               </p>
             </div>
           </div>
