@@ -14,6 +14,7 @@ Keep the existing minimal editorial direction: white space, grayscale portrait, 
 - Rewrote the biography using the supplied source document as the primary reference.
 - Moved the former “Current Focus” copy into the Biography section so all profile content lives under Biography only.
 - Restored the final “Website Under Development” section as requested, instead of presenting it as a separate content/focus section.
+- Added a minimal 404 page so the upgraded Next.js production build has an explicit not-found route.
 - Reduced the artificial loading delay from 2 seconds to 800ms so visitors reach the content faster.
 - Kept the live hero portrait treatment and switched the local portrait render to a plain image element to avoid blank `next/image` output in previews.
 - Updated metadata description for search/social previews.
@@ -23,6 +24,7 @@ Keep the existing minimal editorial direction: white space, grayscale portrait, 
 - Hero subtitle styling was made more explicit for readability.
 - The Biography section allows internal vertical scrolling as a safeguard for smaller screens.
 - Section 2 now uses tighter vertical margins, increased mobile side margins, a wider desktop text measure, slightly smaller biography text, and larger paragraph-end spacing so the full combined copy stays together without the paragraphs feeling compressed.
+- The 404 state reuses the same quiet white editorial treatment rather than introducing a new visual direction.
 - Current full-screen scrolling pattern remains a design constraint; future pass should consider normal document scrolling on mobile for long content.
 
 ## Critique notes
