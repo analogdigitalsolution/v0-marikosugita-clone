@@ -5,25 +5,46 @@ import { ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
 
+const canScrollWithin = (target: EventTarget | null, deltaY: number) => {
+  let element = target as HTMLElement | null
+
+  while (element && element !== document.body) {
+    const style = window.getComputedStyle(element)
+    const scrollableY = /(auto|scroll)/.test(style.overflowY) && element.scrollHeight > element.clientHeight
+
+    if (scrollableY) {
+      const canScrollDown = deltaY > 0 && element.scrollTop + element.clientHeight < element.scrollHeight - 1
+      const canScrollUp = deltaY < 0 && element.scrollTop > 1
+
+      if (canScrollDown || canScrollUp) return true
+    }
+
+    element = element.parentElement
+  }
+
+  return false
+}
+
 export default function Home() {
   const [currentSection, setCurrentSection] = useState(0)
   const [isLoading, setIsLoading] = useState(true)
   const [isTransitioning, setIsTransitioning] = useState(false)
   const sectionsRef = useRef<HTMLDivElement>(null)
-  const totalSections = 3 // Updated for Paritosh's content
+  const totalSections = 3
   const touchStartY = useRef<number | null>(null)
 
   useEffect(() => {
-    // Simulate loading
     const timer = setTimeout(() => {
       setIsLoading(false)
-    }, 2000)
+    }, 800)
 
     return () => clearTimeout(timer)
   }, [])
 
   useEffect(() => {
     const handleScroll = (e: WheelEvent) => {
+      if (canScrollWithin(e.target, e.deltaY)) return
+
       e.preventDefault()
       if (isTransitioning) return
 
@@ -56,7 +77,6 @@ export default function Home() {
   }, [currentSection, isTransitioning])
 
   useEffect(() => {
-    // Fix for mobile scrolling when at the bottom
     const handleTouchStart = (e: TouchEvent) => {
       touchStartY.current = e.touches[0].clientY
     }
@@ -67,17 +87,16 @@ export default function Home() {
       const touchY = e.touches[0].clientY
       const diff = touchStartY.current - touchY
 
-      // If at the last section and trying to scroll down, allow normal browser scrolling
+      if (canScrollWithin(e.target, diff)) return
+
       if (currentSection === totalSections - 1 && diff > 0) {
         return
       }
 
-      // If at the first section and trying to scroll up, allow normal browser scrolling
       if (currentSection === 0 && diff < 0) {
         return
       }
 
-      // Otherwise prevent default to use our custom scrolling
       e.preventDefault()
 
       if (isTransitioning) return
@@ -106,7 +125,7 @@ export default function Home() {
 
     setTimeout(() => {
       setIsTransitioning(false)
-    }, 1000) // Match this with the CSS transition duration
+    }, 1000)
   }
 
   if (isLoading) {
@@ -124,12 +143,14 @@ export default function Home() {
         className="h-full transition-transform duration-1000 ease-in-out"
         style={{ transform: `translateY(-${currentSection * 100}vh)` }}
       >
-        {/* Section 1: Intro - Updated with image and left-aligned text */}
+        {/* Section 1: Intro */}
         <section className="h-screen w-screen flex items-center justify-center p-4">
           <div className="container mx-auto flex flex-col md:flex-row items-center justify-center gap-6 md:gap-0">
             <div className="md:w-1/2 flex flex-col items-start">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-light mb-4 text-left">Paritosh Goel</h1>
-              <h3>Urbanist, Strategist, Artist & Entrepreneur</h3>
+              <h3 className="text-lg md:text-xl font-light text-gray-600">
+                Urbanist, Public Policy Professional, Architect & Entrepreneur
+              </h3>
             </div>
             <div className="md:w-1/2 flex justify-center md:justify-end">
               <div className="relative w-80 h-80 md:w-96 md:h-96 lg:w-[30rem] lg:h-[30rem] overflow-hidden rounded-lg shadow-lg">
@@ -146,26 +167,44 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Section 2: Short Biography */}
-        <section className="h-screen w-screen flex flex-col items-center justify-center p-8">
-          <div className="max-w-[105%] md:max-w-3xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-light mb-6">Short Biography</h2>
-            <div className="text-base md:text-lg font-light space-y-4">
+        {/* Section 2: Biography */}
+        <section className="biography-section h-screen w-screen flex flex-col items-center justify-center overflow-y-auto py-5">
+          <div className="biography-content max-w-4xl mx-auto">
+            <h2 className="biography-heading text-2xl md:text-3xl font-light">Biography</h2>
+            <div className="biography-copy text-[15px] sm:text-[15.5px] md:text-base font-light text-gray-700">
               <p>
-                Paritosh Goel is an urbanist, strategist, architect, and entrepreneur based in India. He currently serves as a Strategy Consultant at NITI Aayog, the apex public policy think tank of the Government of India. Alongside his policy work, Paritosh manages three in-house ventures and has previously led multiple strategic projects, including two government-backed incubator and accelerator programs.
-                Driven by a deep passion for urban planning, sustainable development, and innovation, Paritosh has cultivated a diverse global perspective. His experience spans organizing cognitive and experiential map-making workshops in Kyoto, Taiwan, Cairo, and New York, observing the urban transformation for the Paris 2024 Olympics, and participating in the URIT 2024 Conference in Copenhagen.
+                Paritosh Goel is an architect, urban planner, entrepreneur, and public policy professional working at
+                the intersection of cities, governance, innovation, and sustainable development. He founded Urbandose
+                to empower emerging ideas, initiatives, and communities through ecosystem building, entrepreneurship,
+                technology, innovation, venture capital, and urban transformation.
               </p>
               <p>
-                Recently, Paritosh completed an * in-Residence program in Kyoto, supported by the City Government of Kyoto — an experience that further enriched his cross-cultural and interdisciplinary understanding of cities.
+                Alongside Urbandose, Paritosh works with NITI Aayog, the apex public policy think tank of the
+                Government of India, where he contributes strategy, technical, and research inputs to national and
+                state long-term visioning and multi-sectoral development roadmaps for Viksit Bharat 2047. His work
+                focuses on strategic planning, urban transformation, state visioning, institutional capacity building,
+                and governance reforms.
               </p>
               <p>
-                An avid traveler, Paritosh has explored over 35 countries, continuously drawing inspiration from diverse urban landscapes and communities around the world. His work reflects a commitment to shaping inclusive, resilient, and future-ready cities, while his entrepreneurial pursuits highlight his dedication to empowering emerging innovators and changemakers.
+                Over the years, he has worked across urban development, smart cities, and innovation ecosystems. He has
+                led government-supported incubation centres, mentored startups and social enterprises, and supported
+                public institutions on projects spanning urban planning, infrastructure, heritage, solid waste
+                management, entrepreneurship, and local governance.
+              </p>
+              <p>
+                Paritosh's work brings together evidence, innovation, collaboration, and empathy to help build stronger
+                institutions and cities that are inclusive, sustainable, and ready for the future.
+              </p>
+              <p>
+                His research and creative practice explore the relationship between urbanism, culture, and society,
+                including international workshops and residencies such as Urban Ephemera, Taipei Ephemera, and
+                Asterisk in Residence Kyoto.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Section 3: Contact */}
+        {/* Section 3: Website Under Development */}
         <section className="h-screen w-screen flex flex-col items-center justify-center p-8">
           <div className="max-w-md mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-light mb-6">Website Under Development</h2>
@@ -178,7 +217,6 @@ export default function Home() {
         className={cn(
           "fixed bottom-10 left-0 right-0 text-center text-sm text-gray-500 transition-opacity duration-500 md:bg-transparent bg-white/70 backdrop-blur-sm py-2",
           currentSection === totalSections - 1 ? "opacity-0" : "opacity-100",
-          // Hide on very small screens when in middle sections
           currentSection > 0 && currentSection < totalSections - 1 ? "sm:opacity-100 opacity-0" : "",
         )}
       >
