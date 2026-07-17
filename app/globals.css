@@ -36,6 +36,37 @@ html {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Mobile hero: match the reference first-screen stack while keeping desktop unchanged. */
+@media (max-width: 767px) {
+  .hero-container {
+    gap: 1rem;
+  }
+
+  .hero-copy {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-title {
+    margin-bottom: 0.75rem;
+    text-align: center;
+    font-size: clamp(2.8rem, 12vw, 3.25rem);
+    line-height: 1.04;
+  }
+
+  .hero-subtitle {
+    max-width: calc(100vw - 2rem);
+    font-size: clamp(0.72rem, 3vw, 0.8rem);
+    line-height: 1.3;
+    white-space: nowrap;
+  }
+
+  .hero-portrait {
+    width: min(21rem, 84vw);
+    height: min(21rem, 84vw);
+  }
+}
+
 /* Biography: keep all profile copy together while preserving the quiet editorial rhythm. */
 .biography-section {
   min-height: 100svh;

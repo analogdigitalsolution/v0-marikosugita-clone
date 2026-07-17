@@ -15,6 +15,7 @@ Keep the existing minimal editorial direction: white space, grayscale portrait, 
 - Moved the former “Current Focus” copy into the Biography section so all profile content lives under Biography only.
 - Restored the final “Website Under Development” section as requested, instead of presenting it as a separate content/focus section.
 - Added a minimal 404 page so the upgraded Next.js production build has an explicit not-found route.
+- Adjusted the mobile first-screen hero to match the reference: centered title/subtitle, single-line compact subtitle, tighter spacing, and a slightly larger portrait stack.
 - Reduced the artificial loading delay from 2 seconds to 800ms so visitors reach the content faster.
 - Kept the live hero portrait treatment and switched the local portrait render to a plain image element to avoid blank `next/image` output in previews.
 - Updated metadata description for search/social previews.
@@ -24,6 +25,7 @@ Keep the existing minimal editorial direction: white space, grayscale portrait, 
 - Hero subtitle styling was made more explicit for readability.
 - The Biography section allows internal vertical scrolling as a safeguard for smaller screens.
 - Section 2 now uses tighter vertical margins, increased mobile side margins, a wider desktop text measure, slightly smaller biography text, and larger paragraph-end spacing so the full combined copy stays together without the paragraphs feeling compressed.
+- The mobile hero now uses responsive mobile-only overrides, preserving the existing desktop left-text/right-portrait composition.
 - The 404 state reuses the same quiet white editorial treatment rather than introducing a new visual direction.
 - Current full-screen scrolling pattern remains a design constraint; future pass should consider normal document scrolling on mobile for long content.
 
@@ -31,6 +33,7 @@ Keep the existing minimal editorial direction: white space, grayscale portrait, 
 - The previous copy contained grammar issues and unclear positioning.
 - The separate “Current Focus” section created a content split the user did not want; this has been corrected so the biography owns all profile copy.
 - Section 2 critique/fix/re-critique: the biography had too much vertical padding, paragraphs read as one dense block, and the mobile side margins felt too tight; the fix reduces top/bottom gutters, increases mobile inset, widens the desktop editorial measure, adds clearer paragraph separation, and keeps overflow scrolling available only as a fallback.
+- Mobile hero critique/fix/re-critique: the reference showed a centered, calmer first screen; the previous mobile stack allowed the subtitle to wrap and made the portrait rhythm feel slightly different. The fix keeps the content intact but tightens the mobile-only type/spacing so the first screen matches the provided reference more closely.
 - The current design is still very minimal and could later benefit from navigation, links, contact, selected projects, and press/research references.
 
 ## Open design debt

@@ -144,16 +144,16 @@ export default function Home() {
         style={{ transform: `translateY(-${currentSection * 100}vh)` }}
       >
         {/* Section 1: Intro */}
-        <section className="h-screen w-screen flex items-center justify-center p-4">
-          <div className="container mx-auto flex flex-col md:flex-row items-center justify-center gap-6 md:gap-0">
-            <div className="md:w-1/2 flex flex-col items-start">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-light mb-4 text-left">Paritosh Goel</h1>
-              <h3 className="text-lg md:text-xl font-light text-gray-600">
+        <section className="hero-section h-screen w-screen flex items-center justify-center p-4">
+          <div className="hero-container container mx-auto flex flex-col md:flex-row items-center justify-center gap-6 md:gap-0">
+            <div className="hero-copy md:w-1/2 flex flex-col items-start">
+              <h1 className="hero-title text-5xl md:text-6xl lg:text-7xl font-light mb-4 text-left">Paritosh Goel</h1>
+              <h3 className="hero-subtitle text-lg md:text-xl font-light text-gray-600">
                 Urbanist, Public Policy Professional, Architect & Entrepreneur
               </h3>
             </div>
             <div className="md:w-1/2 flex justify-center md:justify-end">
-              <div className="relative w-80 h-80 md:w-96 md:h-96 lg:w-[30rem] lg:h-[30rem] overflow-hidden rounded-lg shadow-lg">
+              <div className="hero-portrait relative w-80 h-80 md:w-96 md:h-96 lg:w-[30rem] lg:h-[30rem] overflow-hidden rounded-lg shadow-lg">
                 <Image
                   src="/images/design-mode/paritosh.webp"
                   alt="Paritosh Goel"
