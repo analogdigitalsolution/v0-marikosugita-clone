@@ -108,6 +108,7 @@ html {
 
 .biography-link {
   color: inherit;
+  overflow-wrap: anywhere;
   text-decoration-line: underline;
   text-decoration-color: rgba(75, 85, 99, 0.35);
   text-decoration-thickness: 1px;

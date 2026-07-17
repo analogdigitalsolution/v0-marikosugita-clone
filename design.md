@@ -16,7 +16,7 @@ Keep the existing minimal editorial direction: white space, grayscale portrait, 
 - Restored the final “Website Under Development” section as requested, instead of presenting it as a separate content/focus section.
 - Added a minimal 404 page so the upgraded Next.js production build has an explicit not-found route.
 - Adjusted the mobile first-screen hero to match the reference: centered title/subtitle, single-line compact subtitle, tighter spacing, and a slightly larger portrait stack.
-- Added the DOCX-provided hyperlinks inline in the Biography section for Urbandose, NITI Aayog, Urban Ephemera, Taipei Ephemera, and Asterisk in Residence Kyoto.
+- Replaced the paraphrased Biography with the exact first biography block from the supplied DOCX, restored the missing “This dual engagement…” paragraph, and kept the DOCX URL text as clickable links.
 - Reduced the artificial loading delay from 2 seconds to 800ms so visitors reach the content faster.
 - Kept the live hero portrait treatment and switched the local portrait render to a plain image element to avoid blank `next/image` output in previews.
 - Updated metadata description for search/social previews.
@@ -27,7 +27,7 @@ Keep the existing minimal editorial direction: white space, grayscale portrait, 
 - The Biography section allows internal vertical scrolling as a safeguard for smaller screens.
 - Section 2 now uses tighter vertical margins, increased mobile side margins, a wider desktop text measure, slightly smaller biography text, and larger paragraph-end spacing so the full combined copy stays together without the paragraphs feeling compressed.
 - The mobile hero now uses responsive mobile-only overrides, preserving the existing desktop left-text/right-portrait composition.
-- Biography links use subtle inherited-color underlines so the profile stays editorial and minimal while remaining discoverable and keyboard-focusable.
+- Biography links use subtle inherited-color underlines and wrap safely so the visible DOCX URL text remains clickable without breaking the layout.
 - Biography paragraphs are now justified with left-aligned last lines, automatic hyphenation, subtle word-spacing control, and mobile line-height tuning so the edges feel clean without awkward rivers or stretched gaps.
 - The 404 state reuses the same quiet white editorial treatment rather than introducing a new visual direction.
 - Current full-screen scrolling pattern remains a design constraint; future pass should consider normal document scrolling on mobile for long content.
@@ -37,7 +37,8 @@ Keep the existing minimal editorial direction: white space, grayscale portrait, 
 - The separate “Current Focus” section created a content split the user did not want; this has been corrected so the biography owns all profile copy.
 - Section 2 critique/fix/re-critique: the biography had too much vertical padding, paragraphs read as one dense block, and the mobile side margins felt too tight; the fix reduces top/bottom gutters, increases mobile inset, widens the desktop editorial measure, adds clearer paragraph separation, and keeps overflow scrolling available only as a fallback.
 - Mobile hero critique/fix/re-critique: the reference showed a centered, calmer first screen; the previous mobile stack allowed the subtitle to wrap and made the portrait rhythm feel slightly different. The fix keeps the content intact but tightens the mobile-only type/spacing so the first screen matches the provided reference more closely.
-- Hyperlink critique/fix/re-critique: the source DOCX included relevant URLs, but the site previously rendered them as plain text. The fix links only named entities/events already present in the biography, avoids raw URL clutter, opens external references safely, and uses subtle underline styling to preserve the page’s quiet tone.
+- Copy critique/fix/re-critique: the previous site version paraphrased the supplied DOCX and missed the “This dual engagement…” paragraph. The fix restores the exact supplied first biography block and preserves the DOCX URL text as live links.
+- Hyperlink critique/fix/re-critique: the source DOCX included relevant URLs; the fix keeps the visible URL text clickable, opens external references safely, and uses subtle underline styling plus safe wrapping to preserve the page’s quiet tone.
 - Justification critique/fix/re-critique: plain justified text can look strange in narrow web columns because it creates rivers and uneven spacing. The fix justifies the biography but keeps last lines left-aligned, enables hyphenation, gently controls word spacing, and gives mobile a slightly more generous line-height so it reads polished instead of forced.
 - The current design is still very minimal and could later benefit from navigation, contact, selected projects, and press/research references.
 

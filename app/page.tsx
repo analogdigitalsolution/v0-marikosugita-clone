@@ -173,64 +173,77 @@ export default function Home() {
             <h2 className="biography-heading text-2xl md:text-3xl font-light">Biography</h2>
             <div className="biography-copy text-[15px] sm:text-[15.5px] md:text-base font-light text-gray-700">
               <p>
-                Paritosh Goel is an architect, urban planner, entrepreneur, and public policy professional working at
-                the intersection of cities, governance, innovation, and sustainable development. He founded{" "}
+                Paritosh Goel is an urbanist, entrepreneur, and public policy professional working at the intersection
+                of cities, governance, innovation, and sustainable development. Paritosh founded Urbandose ({""}
                 <a className="biography-link" href="https://urbandose.in" target="_blank" rel="noreferrer">
-                  Urbandose
-                </a>{" "}
-                to empower emerging ideas, initiatives, and communities through ecosystem building, entrepreneurship,
-                technology, innovation, venture capital, and urban transformation.
-              </p>
-              <p>
-                Alongside Urbandose, Paritosh works with{" "}
-                <a className="biography-link" href="https://niti.gov.in" target="_blank" rel="noreferrer">
-                  NITI Aayog
+                  https://urbandose.in
                 </a>
-                , the apex public policy think tank of the Government of India, where he contributes strategy,
-                technical, and research inputs to national and state long-term visioning and multi-sectoral development
-                roadmaps for Viksit Bharat 2047. His work focuses on strategic planning, urban transformation, state
-                visioning, institutional capacity building, and governance reforms.
+                ) to empower emerging ideas, initiatives and communities through ecosystem building, entrepreneurship,
+                technology, innovation, venture capital and urban transformation.
               </p>
               <p>
-                Over the years, he has worked across urban development, smart cities, and innovation ecosystems. He has
-                led government-supported incubation centres, mentored startups and social enterprises, and supported
-                public institutions on projects spanning urban planning, infrastructure, heritage, solid waste
-                management, entrepreneurship, and local governance.
+                Alongside Urbandose, Paritosh works with NITI Aayog ({""}
+                <a className="biography-link" href="https://niti.gov.in" target="_blank" rel="noreferrer">
+                  https://niti.gov.in
+                </a>
+                ) , the apex public policy think tank of the Government of India. where he contributes strategy,
+                technical, and research inputs to National and state long-term visioning and multi-sectoral development
+                roadmaps for Viksit Bharat 2047- India's long-term National development vision. His work focuses on
+                strategic planning, urban transformation, state visioning, institutional capacity building, and
+                governance reforms. He has supported the preparation of national and state-level Vision 2047 documents,
+                coordinated with central ministries and state governments, and contributed to initiatives aimed at
+                building resilient, inclusive, and future-ready regions.
               </p>
               <p>
-                Paritosh's work brings together evidence, innovation, collaboration, and empathy to help build stronger
-                institutions and cities that are inclusive, sustainable, and ready for the future.
+                This dual engagement across institutions and enterprise reflects a multidisciplinary approach that
+                combines planning, strategy, and practice-led problem solving.
               </p>
               <p>
-                His research and creative practice explore the relationship between urbanism, culture, and society,
-                including international workshops and residencies such as{" "}
+                Over the years, Paritosh worked extensively in urban development, smart cities, and innovation
+                ecosystems., he has led government-supported incubation centres, mentored startups and social
+                enterprises, and worked with public institutions on projects spanning urban planning, infrastructure,
+                heritage, solid waste management, entrepreneurship, and local governance. His experience bridges policy
+                formulation with implementation, enabling him to approach complex development challenges through both
+                strategic and practical perspectives.
+              </p>
+              <p>
+                Paritosh has been actively engaged in research, writing and exploring the relationship between urbanism,
+                culture, and society. His work has included moderating and organising international workshops such as
+                urban ephemera ({""}
                 <a
                   className="biography-link"
                   href="https://wuf.unhabitat.org/event/wuf12/urban-ephemera"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Urban Ephemera
+                  https://wuf.unhabitat.org/event/wuf12/urban-ephemera
                 </a>
-                ,{" "}
+                ), Taipei Ephemera ({""}
                 <a
                   className="biography-link"
                   href="https://www.travelingcircusofurbanism.com/taipei/taipeiephemera/"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Taipei Ephemera
+                  https://www.travelingcircusofurbanism.com/taipei/taipeiephemera/
                 </a>
-                , and{" "}
+                ) and participated in Global art residencies such as ***in residence Kyoto({""}
                 <a
                   className="biography-link"
                   href="https://asterisk-kyoto.info/244244a9faec8063873af6f699abd8e3"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Asterisk in Residence Kyoto
+                  https://asterisk-kyoto.info/244244a9faec8063873af6f699abd8e3
                 </a>
-                .
+                ) , reflecting a multidisciplinary approach that combines design thinking, entrepreneurship and
+                creative practice.
+              </p>
+              <p>
+                He believes that the most impactful ideas emerges from the convergence of evidence, innovation,
+                collaboration and empathy. Through his work, he strives to build stronger institutions and cities that
+                are more inclusive, sustainable and equipped to address the challenges and opportunities of a rapidly
+                changing world.
               </p>
             </div>
           </div>
