@@ -5,6 +5,26 @@ import { ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
 
+const canScrollWithin = (target: EventTarget | null, deltaY: number) => {
+  let element = target as HTMLElement | null
+
+  while (element && element !== document.body) {
+    const style = window.getComputedStyle(element)
+    const scrollableY = /(auto|scroll)/.test(style.overflowY) && element.scrollHeight > element.clientHeight
+
+    if (scrollableY) {
+      const canScrollDown = deltaY > 0 && element.scrollTop + element.clientHeight < element.scrollHeight - 1
+      const canScrollUp = deltaY < 0 && element.scrollTop > 1
+
+      if (canScrollDown || canScrollUp) return true
+    }
+
+    element = element.parentElement
+  }
+
+  return false
+}
+
 export default function Home() {
   const [currentSection, setCurrentSection] = useState(0)
   const [isLoading, setIsLoading] = useState(true)
@@ -23,6 +43,8 @@ export default function Home() {
 
   useEffect(() => {
     const handleScroll = (e: WheelEvent) => {
+      if (canScrollWithin(e.target, e.deltaY)) return
+
       e.preventDefault()
       if (isTransitioning) return
 
@@ -64,6 +86,8 @@ export default function Home() {
 
       const touchY = e.touches[0].clientY
       const diff = touchStartY.current - touchY
+
+      if (canScrollWithin(e.target, diff)) return
 
       if (currentSection === totalSections - 1 && diff > 0) {
         return
@@ -144,10 +168,10 @@ export default function Home() {
         </section>
 
         {/* Section 2: Biography */}
-        <section className="h-screen w-screen flex flex-col items-center justify-center overflow-y-auto p-8">
-          <div className="max-w-[105%] md:max-w-3xl mx-auto py-10">
-            <h2 className="text-2xl md:text-3xl font-light mb-6">Biography</h2>
-            <div className="text-base md:text-lg font-light space-y-4 leading-relaxed">
+        <section className="biography-section h-screen w-screen flex flex-col items-center justify-center overflow-y-auto py-5">
+          <div className="biography-content max-w-4xl mx-auto">
+            <h2 className="biography-heading text-2xl md:text-3xl font-light">Biography</h2>
+            <div className="biography-copy text-[15px] sm:text-[15.5px] md:text-base font-light text-gray-700">
               <p>
                 Paritosh Goel is an architect, urban planner, entrepreneur, and public policy professional working at
                 the intersection of cities, governance, innovation, and sustainable development. He founded Urbandose
@@ -167,15 +191,6 @@ export default function Home() {
                 public institutions on projects spanning urban planning, infrastructure, heritage, solid waste
                 management, entrepreneurship, and local governance.
               </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Section 3: Current Focus */}
-        <section className="h-screen w-screen flex flex-col items-center justify-center overflow-y-auto p-8">
-          <div className="max-w-3xl mx-auto py-10 text-center">
-            <h2 className="text-2xl md:text-3xl font-light mb-6">Current Focus</h2>
-            <div className="text-base md:text-lg font-light space-y-4 leading-relaxed text-gray-700">
               <p>
                 Paritosh's work brings together evidence, innovation, collaboration, and empathy to help build stronger
                 institutions and cities that are inclusive, sustainable, and ready for the future.
@@ -186,6 +201,13 @@ export default function Home() {
                 Asterisk in Residence Kyoto.
               </p>
             </div>
+          </div>
+        </section>
+
+        {/* Section 3: Website Under Development */}
+        <section className="h-screen w-screen flex flex-col items-center justify-center p-8">
+          <div className="max-w-md mx-auto text-center">
+            <h2 className="text-2xl md:text-3xl font-light mb-6">Website Under Development</h2>
           </div>
         </section>
       </div>

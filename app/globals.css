@@ -36,6 +36,48 @@ html {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Biography: keep all profile copy together while preserving the quiet editorial rhythm. */
+.biography-section {
+  min-height: 100svh;
+  padding-block: clamp(0.9rem, 2.4vh, 1.8rem);
+  padding-inline: clamp(2rem, 8vw, 3rem);
+}
+
+.biography-content {
+  max-height: calc(100svh - clamp(1.8rem, 5vh, 3.6rem));
+}
+
+.biography-heading {
+  margin-bottom: clamp(0.75rem, 1.6vh, 1.2rem);
+}
+
+.biography-copy {
+  line-height: 1.5;
+}
+
+.biography-copy p {
+  margin-bottom: clamp(1rem, 1.8vh, 1.35rem);
+}
+
+.biography-copy p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-height: 760px) {
+  .biography-section {
+    padding-block: 0.75rem;
+    padding-inline: clamp(1.9rem, 7.5vw, 2.5rem);
+  }
+
+  .biography-copy {
+    line-height: 1.44;
+  }
+
+  .biography-copy p {
+    margin-bottom: 0.9rem;
+  }
+}
+
 /* Fix for iOS momentum scrolling issues */
 @supports (-webkit-touch-callout: none) {
   body {
